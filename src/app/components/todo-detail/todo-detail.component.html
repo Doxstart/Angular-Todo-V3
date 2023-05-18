@@ -1,5 +1,15 @@
-<li *ngIf="todoDetail" class="priority{{todoDetail.priority}}">
+<!-- <li *ngIf="todoDetail" class="priority{{todoDetail.priority}}">
   <h3>{{todoDetail.title}}</h3>
   <span>{{todoDetail.description}}</span>
   <button (click)="deleteTodo()">cancella</button>
-</li>
+</li> -->
+
+<mat-card *ngIf="todoDetail">
+  <mat-card-header>
+    <mat-card-title>{{todoDetail.title}}</mat-card-title>
+    <mat-card-subtitle>{{todoDetail.description}}</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-actions align="end">
+    <button (click)="deleteTodo()" mat-button>DELETE</button>
+  </mat-card-actions>
+</mat-card>
