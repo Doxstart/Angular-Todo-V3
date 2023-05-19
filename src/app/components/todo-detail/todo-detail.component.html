@@ -4,7 +4,7 @@
   <button (click)="deleteTodo()">cancella</button>
 </li> -->
 
-<mat-card *ngIf="todoDetail">
+<mat-card class="todo-card priority{{todoDetail.priority}}" *ngIf="todoDetail">
   <mat-card-header>
     <mat-card-title>{{todoDetail.title}}</mat-card-title>
     <mat-card-subtitle>{{todoDetail.description}}</mat-card-subtitle>

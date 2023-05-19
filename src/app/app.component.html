@@ -2,4 +2,6 @@
   <span>Angular Todo</span>
 </mat-toolbar>
 <app-todo-list></app-todo-list>
-<app-todo-add></app-todo-add>
+<button (click)="openModal()" class="add-btn" mat-fab color="primary" aria-label="add Todo">
+  <mat-icon>add</mat-icon>
+</button>

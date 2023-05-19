@@ -1,13 +1,36 @@
-<div>
-  <label for="input-title">Inserisci Titolo</label>
-  <input id="input-title" type="text" [(ngModel)]="newTodo.title">
+<h1 mat-dialog-title>Aggiungi un Todo</h1>
+<div class="todo-dialog-content" mat-dialog-content>
+  <!-- <div>
+    <label for="input-title">Inserisci Titolo</label>
+    <input id="input-title" type="text" [(ngModel)]="newTodo.title">
+  </div>
+  <div>
+    <label for="input-description">Inserisci Descrizione</label>
+    <input id="input-description" type="text" [(ngModel)]="newTodo.description">
+  </div>
+  <div>
+    <label for="input-priority">Inserisci Priorità</label>
+    <input id="input-priority" type="number" [(ngModel)]="newTodo.priority">
+  </div> -->
+  <mat-form-field>
+    <mat-label>Input</mat-label>
+    <input matInput>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Select</mat-label>
+    <mat-select>
+      <mat-option value="one">First option</mat-option>
+      <mat-option value="two">Second option</mat-option>
+    </mat-select>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Textarea</mat-label>
+    <textarea matInput></textarea>
+  </mat-form-field>
+
 </div>
-<div>
-  <label for="input-description">Inserisci Descrizione</label>
-  <input id="input-description" type="text" [(ngModel)]="newTodo.description">
+<div mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close>Cancel</button>
+  <button (click)="saveTodo()" mat-button mat-dialog-close cdkFocusInitial>save</button>
 </div>
-<div>
-  <label for="input-priority">Inserisci Priorità</label>
-  <input id="input-priority" type="number" [(ngModel)]="newTodo.priority">
-</div>
-<button (click)="saveTodo()">Salva</button>
+

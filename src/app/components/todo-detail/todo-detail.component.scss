@@ -1,12 +1,15 @@
 .priority1{
-  border:  2px solid green;
+  border-left:  8px solid green;
 }
 
 .priority2{
-  border:  2px solid orange
+  border-left:  8px solid orange
 }
 
 .priority3{
-  border:  2px solid red;
+  border-left:  8px solid red;
 }
 
+.todo-card{
+  margin: 4px 4px 4px 4px;
+}
