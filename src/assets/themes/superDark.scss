@@ -1,0 +1,141 @@
+@use '@angular/material' as mat;
+
+@include mat.core();
+
+$yellow-palette: (
+    50 : #fcfee5,
+    100 : #f8fdbf,
+    200 : #f4fb94,
+    300 : #f0f969,
+    400 : #ecf848,
+    500 : #e9f728,
+    600 : #e6f624,
+    700 : #e3f51e,
+    800 : #dff318,
+    900 : #d9f10f,
+    A100 : #ffffff,
+    A200 : #fdffea,
+    A400 : #f7ffb7,
+    A700 : #f4ff9d,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #000000,
+        400 : #000000,
+        500 : #000000,
+        600 : #000000,
+        700 : #000000,
+        800 : #000000,
+        900 : #000000,
+        A100 : #000000,
+        A200 : #000000,
+        A400 : #000000,
+        A700 : #000000,
+    )
+);
+
+
+$blue-palette: (
+    50 : #e7e5fe,
+    100 : #c3bffd,
+    200 : #9b94fb,
+    300 : #7269f9,
+    400 : #5448f8,
+    500 : #3628f7,
+    600 : #3024f6,
+    700 : #291ef5,
+    800 : #2218f3,
+    900 : #160ff1,
+    A100 : #ffffff,
+    A200 : #eaeaff,
+    A400 : #b8b7ff,
+    A700 : #9f9dff,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #ffffff,
+        400 : #ffffff,
+        500 : #ffffff,
+        600 : #ffffff,
+        700 : #ffffff,
+        800 : #ffffff,
+        900 : #ffffff,
+        A100 : #000000,
+        A200 : #000000,
+        A400 : #000000,
+        A700 : #000000,
+    )
+);
+
+$orange-palette: (
+    50 : #fef3e5,
+    100 : #fde2bf,
+    200 : #fbce94,
+    300 : #f9ba69,
+    400 : #f8ac48,
+    500 : #f79d28,
+    600 : #f69524,
+    700 : #f58b1e,
+    800 : #f38118,
+    900 : #f16f0f,
+    A100 : #ffffff,
+    A200 : #fff2ea,
+    A400 : #ffd3b7,
+    A700 : #ffc39d,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #000000,
+        400 : #000000,
+        500 : #000000,
+        600 : #000000,
+        700 : #000000,
+        800 : #000000,
+        900 : #000000,
+        A100 : #000000,
+        A200 : #000000,
+        A400 : #000000,
+        A700 : #000000,
+    )
+);
+
+
+$primary-light: mat.define-palette($blue-palette, 500);
+$accent-light: mat.define-palette($yellow-palette, 500);
+
+$primary-dark: mat.define-palette($yellow-palette, 500);
+$accent-dark: mat.define-palette($blue-palette, 500);
+
+$warn: mat.define-palette($orange-palette, 500);
+
+$my-theme-light: mat.define-light-theme((
+  color: (
+    primary: $primary-light,
+    accent: $accent-light,
+    warn: $warn,
+  ),
+  density: 0
+));
+
+$my-theme-dark: mat.define-dark-theme((
+  color: (
+    primary: $primary-dark,
+    accent: $accent-dark,
+    warn: $warn,
+  ),
+  density: 0
+));
+
+
+
+
+
+@include mat.all-component-themes($my-theme-light);
+
+.dark-mode{
+  @include mat.all-component-themes($my-theme-dark);
+}
+
